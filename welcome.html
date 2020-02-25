@@ -6,36 +6,38 @@
 </head>
 <body>
 
-<!-- It provides more structure -->
+<header>
+    <!-- It provides more structure -->
+    <h1>Hello World <span>02-25-2020</span></h1>
+</header>
 
-<h1>Hello World <span>02-25-2020</span></h1>
-
-    <div id="main-header">
-
-<main>
-    <p>
-        Understanding HTML is <em>really</em> <strong>important</strong>!
-    </p>
-    <br>
-    <p>
-        Understanding HTML is <em><strong>really important</strong></em>!
-    </p>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur corporis est fugiat, illum inventore
-        itaque iusto libero nam non possimus saepe voluptatum. Doloribus ducimus fugiat in similique ut vero?
-    </p>
-
-    </div>
-
-</main>
-
-<hr>
+<nav>
+    <ul>
+        <li><a href="#">Intro</a></li>
+        <li><a href="#">HTML</a></li>
+    </ul>
+</nav>
 
 <main id="main-content">
 
+    <article>
+        Understanding HTML is <em>really</em> <strong>important</strong>!
+    </article>
+
+    <article>
+        Understanding HTML is <em><strong>really important</strong></em>!
+    </article>
+    <section id="main-header">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aspernatur corporis est fugiat, illum inventore
+        itaque iusto libero nam non possimus saepe voluptatum. Doloribus ducimus fugiat in similique ut vero?
+    </section>
+
+    <hr>
+
+
     <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi assumenda atque deleniti eligendi est et
-        eveniet harum magnam maxime minus nesciunt, officia possimus quam recusandae rem sed ut voluptatum?
+        eveniet harum magnam maxime minus nesciunt, <br>officia possimus quam recusandae rem sed ut voluptatum?
     </p>
 
     <p>
@@ -44,51 +46,56 @@
         Architecto, eligendi.
     </p>
 
+    <div>
+        <ol>
+            <li>Apples</li>
+            <li>Cherries</li>
+            <li>Bananas</li>
+        </ol>
+        <ul>
+            <li>Java</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>
+                <a href="https://www.php.net" taget="_blank">PHP</a>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <!--  Image Hotlink  -->
+        <img src="https://thumbs-prod.si-cdn.com/BBCqRWrIcgT27wW_55umBJ1rJac=/800x600/filters:no_upscale()/https://public-media.si-cdn.com/filer/2b/98/2b98ec47-682d-4844-b3b3-9410263a4f94/gj3m9r.jpg"
+             width="100%" alt="picture of a dog">
+
+        <!--  Local File  -->
+        <img src="imgs/dog.jpg" alt="saved picture of a dog" width="100%">
+    </div>
+
+    <div>
+        <table border="1">
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Vegan</th>
+            </tr>
+            <tr>
+                <td>Iced Tea</td>
+                <td>$3.99</td>
+                <td>Yes</td>
+            </tr>
+            <tr>
+                <td>Hot-Dog</td>
+                <td>$5.99</td>
+                <td>No</td>
+            </tr>
+        </table>
+    </div>
+
 </main>
 
-<div>
-    <ol>
-        <li>Apples</li>
-        <li>Cherries</li>
-        <li>Bananas</li>
-    </ol>
-    <ul>
-        <li>Java</li>
-        <li>JavaScript</li>
-        <li>Python</li>
-        <li>
-            <a href="https://www.php.net" taget="_blank">PHP</a>
-        </li>
-    </ul>
-</div>
-
-<div>
-    <!--  Image Hotlink  -->
-    <img src="https://thumbs-prod.si-cdn.com/BBCqRWrIcgT27wW_55umBJ1rJac=/800x600/filters:no_upscale()/https://public-media.si-cdn.com/filer/2b/98/2b98ec47-682d-4844-b3b3-9410263a4f94/gj3m9r.jpg" width="100%" alt="picture of a dog">
-
-    <!--  Local File  -->
-    <img src="imgs/dog.jpg" alt="saved picture of a dog" width="100%">
-</div>
-
-<div>
-    <table border="1">
-        <tr>
-            <th>Product</th>
-            <th>Price</th>
-            <th>Vegan</th>
-        </tr>
-        <tr>
-            <td>Iced Tea</td>
-            <td>$3.99</td>
-            <td>Yes</td>
-        </tr>
-        <tr>
-            <td>Hot-Dog</td>
-            <td>$5.99</td>
-            <td>No</td>
-        </tr>
-    </table>
-</div>
+<footer>
+    Secondary links and copyright notices.
+</footer>
 
 </body>
 </html>
