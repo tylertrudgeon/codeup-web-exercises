@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>American Airlines Form</title>
+</head>
+<body>
+<form method="post" action="https://request-inspector.glitch.me/">
+
+    Round Trip <input type="radio" name="flightStyle" value="Round Trip"><br>
+    One Way <input type="radio" name="flightStyle" value="One Way"><br>
+
+    <input name="redeemMiles" value="yes" type="checkbox" checked> Redeem Miles
+
+    <br>
+
+    From
+
+    <br>
+    <select name="fromCity" id="fromCity">
+        <option value="Dallas">DAL</option>
+        <option value="Houston">HOU</option>
+        <option value="San Antonio">SAT</option>
+    </select>
+    <br>
+
+    To
+
+    <br>
+    <select name="toCity" id="toCity">
+        <option value="Dallas">DAL</option>
+        <option value="Houston">HOU</option>
+        <option value="San Antonio">SAT</option>
+    </select>
+    <br>
+
+    Number of passengers
+
+    <br>
+    <select name="passengers" id="passengers">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+    </select>
+    <br>
+
+    Depart
+
+    <br>
+    <input type="date" name="departureTime">
+    <br>
+
+    Return
+
+    <br>
+    <input type="date" name="returnTime">
+    <br>
+
+    <button type="submit">Book My Flight</button>
+
+</form>
+</body>
+</html>
