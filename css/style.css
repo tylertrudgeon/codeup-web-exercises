@@ -3,6 +3,81 @@ First CSS Style Sheet
 */
 
 .fancy-header {
-    color: purple;
+    color: orange;
     text-decoration: underline;
+    text-align: center;
+}
+
+h2 {
+    color: blue;
+    text-decoration: underline;
+}
+
+p {
+    text-align: center;
+    font-size: xx-large;
+}
+
+body {
+    background-color: bisque;
+    background-image: url("https://images.pexels.com/photos/1939485/pexels-photo-1939485.jpeg?cs=srgb&dl=white-painted-wall-1939485.jpg&fm=jpg");
+}
+
+ul {
+    list-style: square;
+}
+
+ol {
+    list-style: none;
+}
+
+main {
+    font-style: oblique;
+}
+
+table {
+    border-style: double;
+    background-color: beige;
+    margin-left: 150px;
+}
+
+th {
+    font-size: 4em;
+    border-style: groove;
+    padding: 10px
+}
+
+tr {
+    font-size: 2em;
+}
+
+td {
+    border-style: double;
+}
+
+a:visited {
+    color: orange;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: deeppink;
+    background-color: black;
+}
+
+a:link {
+    color: darkgreen;
+    text-decoration-line: line-through;
+}
+
+a:active {
+    text-decoration-style: wavy;
+}
+
+a {
+    font-size: xx-large;
+}
+
+footer {
+    text-align: center;
 }
