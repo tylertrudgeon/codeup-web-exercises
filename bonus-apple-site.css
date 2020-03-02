@@ -1,0 +1,112 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.nav {
+    list-style-type: none;
+}
+
+.top-nav {
+    width: 100%;
+    background-color: black;
+    height: 40px;
+    text-align: center;
+}
+
+.nav li {
+    display: inline-block;
+}
+
+.nav-right li {
+    display: inline-block;
+}
+
+.nav-left {
+    list-style-type: none;
+}
+
+.second-nav-left {
+    float: left;
+    margin-left: 285px;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+
+.nav-right {
+    list-style-type: none;
+}
+
+.second-nav-right {
+    float: right;
+    margin-right: 265px;
+    font-family: Arial, Ubuntu, sans-serif;
+    font-size: .75em;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    padding: 2em;
+    line-height: 40px;
+    font-weight: lighter;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+
+.nav-link2 {
+    text-decoration: none;
+    color: black;
+    line-height: 50px;
+    font-weight: bolder;
+}
+
+.nav-link3 {
+    text-decoration: none;
+    color: black;
+    line-height: 50px;
+    padding: 0 2em;
+}
+
+#apple-logo {
+    position: absolute;
+    float: left;
+    width: 25px;
+    height: 25px;
+    left: 280px;
+    padding-top: 6px;
+}
+
+#free {
+    background-color: #dc3752;
+    padding: 5px 15px;
+    border-radius: 15px;
+    margin-left: 1.3em;
+}
+
+.main-page {
+    width: 100%;
+    border-top: 1px solid darkgray;
+    margin-top: 50px;
+}
+
+.music-logo {
+    height: 75px;
+    padding: 0 0 0 645px;
+    margin-top: 30px;
+}
+
+.main-page p {
+    margin-top: 20px;
+    font-size: 5em;
+    text-align: center;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+
+.free-big {
+    background-color: #dc3752;
+    font-size: 1em;
+    color: white;
+    border-radius: 45px;
+    padding: 10px 80px;
+    margin: 30px 0 0 588px;
+
+}
