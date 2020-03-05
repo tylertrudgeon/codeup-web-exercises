@@ -20,27 +20,45 @@
     //Create an array with the names of five of your favorite foods.
 
     var favoriteFoods=[ "Pizza", "Burger", "Chicken", "Sushi", "Steak" ];
-    console.log(favoriteFoods);
+    console.log('made an array of 5 favorite foods', favoriteFoods);
 
     //Exercise 3
     //Create an array of numbers from 1 to 10.
 
     var numbers=[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 ];
-    console.log(numbers);
+    console.log('created an array from 1-10', numbers);
 
     //Exercise 4
     //add 1 item to the end of your favorite foods array.
 
     favoriteFoods.push("Chinese");
-    console.log(favoriteFoods);
+    console.log('added an item to the array', favoriteFoods);
 
     //Exercise 5
     //Reverse the favorite foods array.
 
     favoriteFoods.reverse();
-    console.log(favoriteFoods);
+    console.log('reversed the array.', favoriteFoods);
 
     //Exercise 6
+    // Sort the favorite foods array in alphabetical order.
+
+    favoriteFoods.sort();
+    console.log('sorted the array in alphabetical order', favoriteFoods);
+
+    //Exercise 7
+    //Sort the favorite foods array in reverse alphabetical order.
+
+    favoriteFoods.sort().reverse();
+    console.log('reversed the alphabetical order of the array', favoriteFoods);
+
+    //Exercise 8
+    //Create a new array of fruits and add that array to the end of your favorite foods array.
+
+    var fruits=[ "Apple", "Kiwi", "Orange", "Strawberry" ];
+    var concatArray = favoriteFoods.concat(fruits);
+    console.log('concatenated two arrays together', concatArray);
+
 
 </script>
 </body>
