@@ -3,7 +3,7 @@
 }
 
 main {
-    display: inline-grid;
+    display: grid;
     width: 500px;
     height: 500px;
     grid-template-columns: repeat(8, 1fr);

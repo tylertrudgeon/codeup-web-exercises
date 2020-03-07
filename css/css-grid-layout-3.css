@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.container {
+    display: grid;
+    grid-gap: 7px;
+    height: 100vh;
+    color: white;
+    font-size: 2em;
+    grid-template-columns: repeat( 4, 1fr);
+    grid-template-rows: repeat( 5, 1fr);
+}
+
+div {
+    background-color: #ffc64c;
+    padding: 10px;
+}
+
+div:nth-of-type(1) {
+    grid-column: 1 / -1;
+    grid-row: 1 / span 1;
+}
+
+div:nth-of-type(2) {
+    grid-column: 1 / span 1;
+    grid-row: 2 / span 4;
+}
+
+div:nth-of-type(3) {
+    grid-column: 2 / span 1;
+    grid-row: 2 / span 1;
+}
+
+div:nth-of-type(4) {
+    grid-column: 3 / span 2;
+    grid-row: 2 / span 1;
+}
+
+div:nth-of-type(5) {
+    grid-column: 2 / span 2;
+    grid-row: 3 / span 1;
+}
+
+div:nth-of-type(6) {
+    background-color: #ffc64c;
+    grid-column: 4 / span 1;
+    grid-row: 3 / span 1;
+}
+
+div:nth-of-type(7) {
+    grid-column: 2 / span 1;
+    grid-row: 4 / span 1;
+}
+
+div:nth-of-type(8) {
+    grid-column: 3 / span 1;
+    grid-row: 4 / span 1;
+}
+
+div:nth-of-type(9) {
+    grid-column: 4 / span 1;
+    grid-row: 4 / span 1;
+}
+
+div:nth-of-type(10) {
+    grid-column: 2 / span 3;
+    grid-row: 5 / span 1;
+}

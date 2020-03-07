@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.wrapper {
+    display: grid;
+    grid-gap: 7px;
+    height: 100vh;
+    grid-template-columns: 20% 80%;
+    grid-template-rows: 10% 1fr 8% 8%;
+    grid-template-areas:
+    "header header"
+    "nav article"
+    "nav ads"
+    "footer footer";
+}
+
+section {
+    background-color: #7ed644;
+    padding: 10px;
+}
+
+section:nth-of-type(1) {
+    grid-area: header;
+}
+
+section:nth-of-type(2) {
+    grid-area: nav;
+}
+
+section:nth-of-type(3) {
+    grid-area: article;
+}
+
+section:nth-of-type(4) {
+    grid-area: ads;
+}
+
+section:nth-of-type(5) {
+    grid-area: footer;
+}
