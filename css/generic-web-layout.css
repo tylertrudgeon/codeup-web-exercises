@@ -3,19 +3,12 @@
     margin: 0;
 }
 
-main {
+main.wrapper {
     display: grid;
+    width: 100vw;
     height: 100vh;
-    grid-template-columns: 1fr 85%;
-    grid-template-rows: repeat(7, 1fr);
-    grid-template-areas:
-    "nav-top nav-top"
-    "nav-left header"
-    "nav-left header"
-    "nav-left header"
-    "nav-left nav-bottom"
-    "nav-left footer"
-    "nav-left copyright";
+    grid-template-columns: 15% 85%;
+    grid-template-rows: 6% 20% 20% 20% 10% 7%
 }
 
 ul li {
@@ -23,37 +16,29 @@ ul li {
 }
 
 nav.nav-top ul {
+    display: flex;
     background-color: black;
     color: white;
-    grid-area: nav-top;
+    font-size: 1em;
+    width: 100vw;
+    z-index: 100;
+}
+
+nav.nav-top ul li {
+    display: inline-block;
+    padding: 10px 20px;
+}
+
+nav.nav-top ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
 }
 
 .nav-left {
+    display: flex;
+    grid-row: 2 / span 6;
+    grid-column: 1 / span 1;
     background-color: #848487;
     color: black;
-    grid-area: nav-left;
-}
-
-.nav-bottom {
-    grid-area: nav-bottom;
-}
-
-section:nth-of-type(1) {
-    grid-area: header;
-}
-
-section:nth-of-type(4){
-    grid-area: footer;
-}
-
-section:nth-of-type(5){
-    grid-area: copyright;
-}
-
-.nav-left ul li
-
-.nav-top ul li {
-    text-decoration: none;
-    color: white;
-    display: inline-block;
 }
