@@ -7,38 +7,113 @@ main.wrapper {
     display: grid;
     width: 100vw;
     height: 100vh;
-    grid-template-columns: 15% 85%;
-    grid-template-rows: 6% 20% 20% 20% 10% 7%
+    grid-template-columns: 22% 1fr;
+    grid-template-rows: 4% 1fr 1fr 1fr 7% 9% 4%
 }
 
-ul li {
-    list-style: none;
-}
-
-nav.nav-top ul {
-    display: flex;
+.nav-top {
     background-color: black;
-    color: white;
-    font-size: 1em;
-    width: 100vw;
-    z-index: 100;
+    grid-column: 1 / -1;
+    grid-row: 1 / span 1;
 }
 
-nav.nav-top ul li {
-    display: inline-block;
-    padding: 10px 20px;
-}
-
-nav.nav-top ul li a {
-    color: white;
+.nav-top ul {
+    display: flex;
     text-decoration: none;
-    font-family: 'Roboto', sans-serif;
+    padding-left: 16px;
+}
+
+.nav-top ul li a {
+    color: white;
+    padding: 6px 25px 6px 0;
 }
 
 .nav-left {
+    background-color: #dddddd;
+    grid-column: 1 / 2;
+    grid-row: 2 / -1;
+}
+
+.nav-left ul {
     display: flex;
-    grid-row: 2 / span 6;
-    grid-column: 1 / span 1;
-    background-color: #848487;
+    width: 100%;
+    flex-direction: column;
+    padding-left: 16px;
+}
+
+.nav-left ul li a{
+    padding: 10px 0;
     color: black;
+}
+
+.heading-top {
+     background-color: #7ef5ff;
+     grid-column: 2 / -1;
+     grid-row: 2 / span 1;
+}
+
+.heading-middle {
+    background-color: bisque;
+    grid-column: 2 / -1;
+    grid-row: 3 / span 1;
+}
+
+.heading-bottom {
+    background-color: palegreen;
+    grid-column: 2 / -1;
+    grid-row: 4 / span 1;
+}
+
+.nav-bottom {
+    display: flex;
+    background-color: white;
+    grid-column: 2 / -1;
+    grid-row: 5 / span 1;
+    justify-content: center;
+}
+
+.nav-bottom ul {
+    display: flex;
+}
+
+.nav-bottom ul li a{
+    text-decoration: none;
+    padding: 20px 10px;
+    color: black;
+}
+
+.footer {
+    background-color: #5c5c5c;
+    grid-column: 2 / -1;
+    grid-row: 6 / span 1;
+    color: white;
+    padding-left: 20px;
+    padding-top: 28px;
+}
+
+.copyright {
+    background-color: #313131;
+    grid-column: 2 / -1;
+    grid-row: 7 / -1;
+    color: white;
+    padding-left: 20px;
+    padding-top: 8px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+h3 {
+    padding: 15px;
+}
+
+h2 {
+    padding: 15px;
+    font-weight: normal;
 }
