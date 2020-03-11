@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="css/custom.css">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://kit.fontawesome.com/357e39b529.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
@@ -14,7 +15,6 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <a class="navbar-brand" href="#">Pizza World</a>
-
             <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
                 <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
@@ -30,7 +30,7 @@
                 </ul>
                 <ul class="navbar-nav mt-2 mt-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Sign Up</a>
+                        <a class="nav-link nav-link-signup" href="#"><i class="fas fa-user"></i>Sign Up</a>
                     </li>
                 </ul>
             </div>
@@ -68,11 +68,11 @@
                         <ul class="list-group list-group-flush text-left">
                             <li class="list-group-item">Garlic seasoned crust with a rich, buttery taste.</li>
                             <li class="list-group-item"><input class="form-check-input" type="radio" name="crust-style" id="crust-style" value="small">
-                                <label class="form-check-label" for="exampleRadios1">
+                                <label class="form-check-label" for="crust-style">
                                     Small (10")
                                 </label></li>
                             <li class="list-group-item"><input class="form-check-input" type="radio" name="crust-style" id="crust-style" value="medium">
-                                <label class="form-check-label" for="exampleRadios1">
+                                <label class="form-check-label" for="crust-style">
                                     Medium (12")
                                 </label></li>
                         </ul>
@@ -83,19 +83,19 @@
                         </div>
                         <ul class="list-group list-group-flush text-left">
                             <li class="list-group-item">Thin enough for optimum crispy to crunchy ratio.</li>
-                            <li class="list-group-item"><input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                <label class="form-check-label" for="exampleRadios1">
+                            <li class="list-group-item"><input class="form-check-input" type="radio" name="crust-style" id="crust-style" value="option1">
+                                <label class="form-check-label" for="crust-style">
                                     Medium (12")
                                 </label></li>
-                            <li class="list-group-item"><input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" checked>
-                                <label class="form-check-label" for="exampleRadios1">
+                            <li class="list-group-item"><input class="form-check-input" type="radio" name="crust-style" id="crust-style" value="option1">
+                                <label class="form-check-label" for="crust-style">
                                     Large (14")
                                 </label></li>
                         </ul>
                     </div>
                 </div>
                 <footer>
-                    <a href="#" class="btn btn-primary ">Next Step >></a>
+                    <a href="#" class="btn btn-primary ">Next Step <i class="fas fa-angle-right"></i></a>
                 </footer>
             </div>
         </div>
@@ -161,8 +161,8 @@
                 </div>
                 <footer>
                     <div class="btn-group" role="group">
-                    <a href="#" class="btn btn-primary"><< Previous Step</a>
-                    <a href="#" class="btn btn-primary">Next Step >></a>
+                    <a href="#" class="btn btn-primary"><i class="fas fa-angle-left"></i> Previous Step</a>
+                    <a href="#" class="btn btn-primary">Next Step <i class="fas fa-angle-right"></i></a>
                     </div>
                 </footer>
             </div>
@@ -201,7 +201,7 @@
                                 </label></li>
                             <li class="list-group-item"><input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                                 <label class="form-check-label" for="defaultCheck1">
-                                    Philly Steam
+                                    Philly Steak
                                 </label></li>
                             <li class="list-group-item"><input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
                                 <label class="form-check-label" for="defaultCheck1">
@@ -234,7 +234,7 @@
                     </div>
                 </div>
                 <footer>
-                    <a href="#" class="btn btn-primary ">Checkout</a>
+                    <a href="#" class="btn btn-primary ">Checkout <i class="fas fa-shopping-cart"></i></a>
                 </footer>
             </div>
         </div>

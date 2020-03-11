@@ -1,4 +1,11 @@
+a.navbar-brand {
+    margin-left: 149px;
+}
 
+a.nav-link-signup {
+    display: inline-block;
+    margin-right: 145px;
+}
 
 .jumbotron {
     background-image: url("../imgs/pizza.png");
@@ -28,4 +35,8 @@ footer {
 
 label.form-check-label {
     margin-left: 18px;
+}
+
+i.fas.fa-user {
+    margin-right: 5px;
 }
