@@ -43,21 +43,24 @@
         </div>
         <h2>Build your own pizza!</h2>
         <div class="card text-center">
-            <div class="card-header">
+            <div class="card-header" id="nav-tab" data-toggle="tab" role="tablist">
                 <ul class="nav nav-tabs card-header-tabs">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#"><span class="badge badge-pill badge-secondary">1</span>Size and crust</a>
+                        <a class="nav-link active" id="crust-selector" data-toggle="tab" href="#crust-tab" role="tab" aria-controls="crust" aria-selected="true">
+                            <span class="badge badge-pill badge-secondary">1</span>Size and crust</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><span class="badge badge-pill badge-secondary">2</span>Cheese and Sauce</a>
+                        <a class="nav-link" id="cheese-selector" data-toggle="tab" href="#cheese-tab" role="tab" aria-controls="cheese" aria-selected="false">
+                            <span class="badge badge-pill badge-secondary">2</span>Cheese and Sauce</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><span class="badge badge-pill badge-secondary">3</span>Toppings</a>
+                        <a class="nav-link" id="toppings-selector" data-toggle="tab" href="#toppings-tab" role="tab" aria-controls="toppings" aria-selected="false">
+                            <span class="badge badge-pill badge-secondary">3</span>Toppings</a>
                     </li>
                 </ul>
             </div>
-            <div class="card-body-outer">
-                <div class="list-group">
+            <div class="card-body-outer tab-content" id="outer-card">
+                <div class="tab-pane active" id="crust-tab" data-toggle="tab" role="tabpanel" aria-labelledby="crust-tab">
                     <div class="list-group-item list-group-item-action active text-left">
                         Choose size and crust
                     </div>
@@ -100,21 +103,24 @@
             </div>
         </div>
         <div class="card text-center">
-            <div class="card-header">
+            <div class="card-header" id="cheese-tab" data-toggle="tab" role="tablist">
                 <ul class="nav nav-tabs card-header-tabs">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><span class="badge badge-pill badge-secondary">1</span>Size and crust</a>
+                        <a class="nav-link" id="crust-link" data-toggle="tab" href="#crust-tab" role="tab" aria-controls="crust" aria-selected="false">
+                            <span class="badge badge-pill badge-secondary">1</span>Size and crust</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#"><span class="badge badge-pill badge-secondary">2</span>Cheese and Sauce</a>
+                        <a class="nav-link active" id="cheese-link" data-toggle="tab" href="#cheese-tab" role="tab" aria-controls="cheese" aria-selected="true">
+                            <span class="badge badge-pill badge-secondary">2</span>Cheese and Sauce</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><span class="badge badge-pill badge-secondary">3</span>Toppings</a>
+                        <a class="nav-link" id="toppings-link" data-toggle="tab" href="#toppings-tab" role="tab" aria-controls="toppings" aria-selected="false">
+                            <span class="badge badge-pill badge-secondary">3</span>Toppings</a>
                     </li>
                 </ul>
             </div>
-            <div class="card-body-outer">
-                <div class="list-group">
+            <div class="card-body-outer tab-content" id="outer-card2">
+                <div class="tab-pane active" id="cheese-active" data-toggle="tab" role="tabpanel" aria-labelledby="cheese-tab">
                     <div class="list-group-item list-group-item-action active text-left">
                         Choose Cheese and Sauce
                     </div>
@@ -168,21 +174,24 @@
             </div>
         </div>
         <div class="card text-center">
-            <div class="card-header">
+            <div class="card-header" id="toppings-tab" data-toggle="tab" role="tablist">
                 <ul class="nav nav-tabs card-header-tabs">
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><span class="badge badge-pill badge-secondary">1</span>Size and crust</a>
+                        <a class="nav-link" id="crust" data-toggle="tab" href="#crust-tab" role="tab" aria-controls="crust" aria-selected="false">
+                            <span class="badge badge-pill badge-secondary">1</span>Size and crust</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><span class="badge badge-pill badge-secondary">2</span>Cheese and Sauce</a>
+                        <a class="nav-link" id="cheese" data-toggle="tab" href="#cheese-tab" role="tab" aria-controls="cheese" aria-selected="false">
+                            <span class="badge badge-pill badge-secondary">2</span>Cheese and Sauce</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#"><span class="badge badge-pill badge-secondary">3</span>Toppings</a>
+                        <a class="nav-link active" id="toppings" data-toggle="tab" href="#toppings-tab" role="tab" aria-controls="toppings" aria-selected="true">
+                            <span class="badge badge-pill badge-secondary">3</span>Toppings</a>
                     </li>
                 </ul>
             </div>
-            <div class="card-body-outer">
-                <div class="list-group">
+            <div class="card-body-outer tab-content" data-toggle="tab" id="outer-card3">
+                <div class="tab-pane active" id="toppings-active" data-toggle="tab" role="tabpanel" aria-labelledby="toppings-tab">
                     <div class="list-group-item list-group-item-action active text-left">
                         Choose size and crust
                     </div>
