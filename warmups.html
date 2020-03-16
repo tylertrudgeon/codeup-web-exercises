@@ -119,6 +119,38 @@
 
     console.log(isNumber("Hi")); //returns false
     console.log(isNumber(42)); //returns true
+
+    //Exercise 15
+    //Create a function that generates and returns a random number between 0 and 10
+
+    function getRandomNumber(){
+        return Math.floor(Math.random() * 11);
+    }
+
+    console.log(getRandomNumber());
+
+    //Exercise 16
+    //Create an array with your classmates names in it.
+
+    var classmatesArray =[ "Delayne", "Emily", "Nayoung", "Ramon", "Rex", "Roshan", "Ry", "Sung", "Tyler", "Valeria", "Esai", "Evelyn", "Jacob", "Moriah", "Ronnel" ];
+
+    console.log('classmatesArray', classmatesArray);
+
+    //Exercise 17
+    //Create a function that returns a random item from an array.
+
+    function getRandomItem(array) {
+        return array[getRandomNumber()];
+    }
+
+
+    console.log('getRandomItem(classmatesArray): ', getRandomItem(classmatesArray));
+
+    //Exercise 18
+    //Creat a function that prints a list of names randomly from the apex array.
+
+    
+
 </script>
 </body>
 </html>
