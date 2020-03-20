@@ -19,9 +19,14 @@
 var wantToEnterNumber = confirm('Would you like to enter a number?');
 
 
-if (wantToEnterNumber === true) {
+if (wantToEnterNumber) {
     var aNumber = parseInt(prompt('Please enter a number'));
+
+    if (isNaN (aNumber)) {
+        alert('That is not a number.')
+    }
 }
+
 
 if (aNumber % 2 === 0) {
     alert(aNumber +' is even');
@@ -81,8 +86,10 @@ console.log(analyzeColor('purple'));
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
 //                  will contain a different color every time the page loads)
+
 var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
 var randomColor = colors[Math.floor(Math.random() * colors.length)];
+
 /**
  * TODO:
  * Pass the `randomColor` variable to your function and console.log the results.
@@ -124,19 +131,7 @@ console.log(colorName);
 
 var colorName = prompt("What is your favorite color?");
 
-function analyzeColor(colorName) {
-    if (colorName === 'blue') {
-        alert("Blue is the color of the sky.");
-    } else if (colorName === 'red') {
-        alert("Strawberries are red.");
-    } else if (colorName === 'cyan') {
-        alert("I don't know anything about cyan.");
-    } else {
-        alert("This color wasn't listed!");
-    }
-}
-
-analyzeColor((colorName));
+alert(analyzeColor(colorName));
 
 /**
  * TODO:
@@ -158,10 +153,9 @@ analyzeColor((colorName));
  * return value.
  */
 
-var totalAmount = 100;
 
-function calculateTotal(luckyNumber) {
-    if (luckyNumber === 0) {
+function calculateTotal(luckyNumber, totalAmount) {
+    if (luckyNumber === 0 || luckyNumber > 5) {
         return totalAmount;
     } else if (luckyNumber === 1) {
         return totalAmount - (0.10 * totalAmount);
@@ -171,17 +165,17 @@ function calculateTotal(luckyNumber) {
         return totalAmount - (0.35 * totalAmount);
     } else if (luckyNumber === 4) {
         return totalAmount - (0.50 * totalAmount);
-    } else {
-        return "It's free!!"
+    } else if (luckyNumber === 5) {
+        return 0;
     }
 }
 
-console.log(calculateTotal(0));
-console.log(calculateTotal(1));
-console.log(calculateTotal(2));
-console.log(calculateTotal(3));
-console.log(calculateTotal(4));
-console.log(calculateTotal(5));
+console.log(calculateTotal(0, 100));
+console.log(calculateTotal(1, 100));
+console.log(calculateTotal(2, 100));
+console.log(calculateTotal(3, 100));
+console.log(calculateTotal(4, 100));
+console.log(calculateTotal(5, 100));
 
 /**
  * TODO:
@@ -198,7 +192,7 @@ var totalAmount = prompt("What was your total bill?");
 
 function calculateTotal(luckyNumber) {
     if (luckyNumber === 0) {
-        alert('Your lucky number was 0! Your bill before discount was $' + totalAmount + '! $' + totalAmount + ' is your price after a discount of 0%');
+        alert('Your lucky number was 0 or greater than 5. :( :( Your bill before discount was $' + totalAmount + '! $' + totalAmount + ' is your price after a discount of 0%');
     } else if (luckyNumber === 1) {
         alert('Your lucky number was 1! Your bill before discount was $' + totalAmount + '! $' + (totalAmount - (0.10 * totalAmount)) + ' is your price after a discount of 10%');
     } else if (luckyNumber === 2) {
@@ -207,7 +201,7 @@ function calculateTotal(luckyNumber) {
         alert('Your lucky number was 3! Your bill before discount was $' + totalAmount + '! $' + (totalAmount - (0.35 * totalAmount)) + ' is your price after a discount of 35%');
     } else if (luckyNumber === 4) {
         alert('Your lucky number was 4! Your bill before discount was $' + totalAmount + '! $' + (totalAmount - (0.50 * totalAmount)) + ' is your price after a discount of 50%');
-    } else {
+    } else if (luckyNumber === 5) {
         alert('Your lucky number was 5! Your bill before discount was $' + totalAmount + '! $' + 0 + ' is your price after a discount of 100%');
     }
 }
