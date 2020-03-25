@@ -3,7 +3,7 @@
 var i = 1;
 
 while (i <= 65536) {
-    console.log('Multiply the number by itself until it reaches 65536: ' +i);
+    console.log('Multiply the number by two until it reaches 65536: ' +i);
     i = (i * 2);
 }
 
