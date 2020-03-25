@@ -1,39 +1,33 @@
 
 
 function showMultiplicationTable(aNumber) {
-    console.log(aNumber * 1);
-    console.log(aNumber * 2);
-    console.log(aNumber * 3);
-    console.log(aNumber * 4);
-    console.log(aNumber * 5);
-    console.log(aNumber * 6);
-    console.log(aNumber * 7);
-    console.log(aNumber * 8);
-    console.log(aNumber * 9);
-    console.log(aNumber * 10);
-}
-
-
-var randomNumber = Math.floor(Math.random() * 2) + 20;
-
-console.log(randomNumber);
-
-console.log(showMultiplicationTable(randomNumber));
-
-
-for (i = randomNumber; i <= 200) {
-    if (i % 2 === 0) {
-        console.log('even');
-    } else {
-        console.log('odd');
+    for (var i = 1; i <= 10; i++) {
+        var answer = aNumber * i;
+        console.log(aNumber + ' x ' + i + ' = ' + answer);
     }
 }
 
-for (var i = 1; i <= 9; i++){
-    for (var j = 0; j < i; j++)
-        console.log(i);
+showMultiplicationTable(4);
+
+
+
+
+for (var i = 0; i < 10; i++) {
+    var randomNumber = Math.floor(Math.random() * 180) + 20;
+
+    if (randomNumber % 2 === 0) {
+        console.log(randomNumber + ' is even.');
+    } else {
+        console.log(randomNumber + ' is odd.');
+    }
 }
 
-for (var i = 100; i > 0; i -= 5){
-    console.log('Logging all numbers from 100 to 5 by increments of 5: ' +i);
+
+
+for (var i = 1; i <= 9; i++){
+    console.log(i.toString().repeat(i));
+}
+
+for (var i = 100; i >= 5; i -= 5){
+    console.log('Logging all numbers from 100 to 5 by increments of 5: ' + i);
 }
