@@ -29,11 +29,11 @@ for (i = randomNumber; i <= 200) {
     }
 }
 
-// for (var i = 1; i <= 9; i++){
-//     for (var j = 0; j < i; j++)
-//         console.log(i);
-// }
-//
-// for (var i = 100; i > 0; i -= 5){
-//     console.log('Logging all numbers from 100 to 5 by increments of 5: ' +i);
-// }
+for (var i = 1; i <= 9; i++){
+    for (var j = 0; j < i; j++)
+        console.log(i);
+}
+
+for (var i = 100; i > 0; i -= 5){
+    console.log('Logging all numbers from 100 to 5 by increments of 5: ' +i);
+}
