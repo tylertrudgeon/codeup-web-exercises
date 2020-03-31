@@ -11,7 +11,7 @@
      * console.log planetsArray to check your work
      */
 
-    var planetsArray = planetsString.split("|");
+    planetsArray = planetsString.split("|");
     console.log(planetsArray);
 
     /**
@@ -27,6 +27,8 @@
 
     var planetsBreak = planetsArray.join('<br>');
     console.log(planetsBreak);
+    document.write(planetsBreak);
+
 
     var unorderedPlanets =
         '<ul>' +
@@ -36,5 +38,6 @@
         '</ul>';
 
     console.log(unorderedPlanets);
+
 
 })();
