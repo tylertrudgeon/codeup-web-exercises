@@ -119,10 +119,6 @@
             });
         });
 
-        // $('h3').click(function () {
-        //     $('ul').children(this).css('font-weight', 'bold');
-        // });
-
         $('#header-1').click(function () {
             $('#first-ul').children().toggleClass('list-item');
         });
@@ -135,6 +131,17 @@
             $('#third-ul').children().toggleClass('list-item');
         });
 
+        $('#first-ul').click(function () {
+            $('#first-ul li').first().css('color', 'blue');
+        });
+
+        $('#second-ul').click(function () {
+            $('#second-ul li').first().css('color', 'blue');
+        });
+
+        $('#third-ul').click(function () {
+            $('#third-ul li').first().css('color', 'blue');
+        });
     });
 
 </script>
