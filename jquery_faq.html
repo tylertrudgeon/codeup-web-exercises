@@ -9,6 +9,14 @@
         visibility: hidden;
     }
 
+    .highlight {
+        background-color: yellow;
+    }
+
+    dt {
+        cursor: default;
+    }
+
    a {
        text-decoration: none;
        color: black;
@@ -64,8 +72,7 @@
         });
 
         $('dt').click(function () {
-            $('dt').css('background-color', 'white');
-            $(this).css('background-color', 'yellow');
+            $(this).toggleClass('highlight');
         });
 
     });
