@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Attributes</title>
+    <title>Attributes & Traversing</title>
 </head>
 <style>
     .invisible {
@@ -26,41 +26,72 @@
 </style>
 <body>
 
-<a href="#" id="toggle-link">Toggle Visibility</a>
+    <a href="#" id="toggle-link">Toggle Visibility</a>
 
-<h1>Cool National Park Facts:</h1>
+    <h1>Cool National Park Facts:</h1>
 
-<dl>
-    <dt>Yellowstone National Park</dt>
-    <dd class="invisible">is the oldest U.S. national park, founded in 1872.</dd>
+    <dl>
+        <dt>Yellowstone National Park</dt>
+        <dd class="invisible">is the oldest U.S. national park, founded in 1872.</dd>
 
-    <dt>The Grand Canyon</dt>
-    <dd class="invisible">is known as one of the Seven Natural Wonders of the World.</dd>
+        <dt>The Grand Canyon</dt>
+        <dd class="invisible">is known as one of the Seven Natural Wonders of the World.</dd>
 
-    <dt>Sequoia National Park</dt>
-    <dd class="invisible">is home to the largest living single-stem tree in the world, the wonderfully named General Sherman. The tree is approximately 275 feet tall and weighs approximately 1,900 metric tons.</dd>
+        <dt>Sequoia National Park</dt>
+        <dd class="invisible">is home to the largest living single-stem tree in the world, the wonderfully named General Sherman. The tree is approximately 275 feet tall and weighs approximately 1,900 metric tons.</dd>
 
-    <dt>Wrangell-St. Elias National Park, Alaska</dt>
-    <dd class="invisible">is the largest national park, covering 13,000 square miles or 13.2 million acres.</dd>
+        <dt>Wrangell-St. Elias National Park, Alaska</dt>
+        <dd class="invisible">is the largest national park, covering 13,000 square miles or 13.2 million acres.</dd>
 
-    <dt>Death Valley National Park </dt>
-    <dd class="invisible">is the largest national park in the lower 48 U.S. states, stretching 5,300 square miles or 3.4 million acres.</dd>
+        <dt>Death Valley National Park </dt>
+        <dd class="invisible">is the largest national park in the lower 48 U.S. states, stretching 5,300 square miles or 3.4 million acres.</dd>
 
-    <dt>Great Smoky Mountains National Park</dt>
-    <dd class="invisible">is the most visited national park with more than 9 million guests per year, followed by Grand Canyon National Park, which gets more than 4 million visits per year.</dd>
+        <dt>Great Smoky Mountains National Park</dt>
+        <dd class="invisible">is the most visited national park with more than 9 million guests per year, followed by Grand Canyon National Park, which gets more than 4 million visits per year.</dd>
 
-    <dt>Arches National Park</dt>
-    <dd class="invisible">is famous for having the largest concentration of stone arches in the world.</dd>
+        <dt>Arches National Park</dt>
+        <dd class="invisible">is famous for having the largest concentration of stone arches in the world.</dd>
 
-    <dt>Everglades National Park</dt>
-    <dd class="invisible">protects more than 25% of Florida's original everglades (subtropical wetlands).</dd>
+        <dt>Everglades National Park</dt>
+        <dd class="invisible">protects more than 25% of Florida's original everglades (subtropical wetlands).</dd>
 
-    <dt>Dry Tortugas National Park in Florida</dt>
-    <dd class="invisible">is known for its world-renowned concentration of turtles.</dd>
+        <dt>Dry Tortugas National Park in Florida</dt>
+        <dd class="invisible">is known for its world-renowned concentration of turtles.</dd>
 
-    <dt>Mesa Verde National Park</dt>
-    <dd class="invisible">was the first national park to be recognized for “works of man,” an acknowledgement of the incredible cliff dwellings left behind by the Pueblo Indians.</dd>
-</dl>
+        <dt>Mesa Verde National Park</dt>
+        <dd class="invisible">was the first national park to be recognized for “works of man,” an acknowledgement of the incredible cliff dwellings left behind by the Pueblo Indians.</dd>
+    </dl>
+
+    <div>
+        <h3>Everglades National Park</h3>
+        <ul>
+            <li class="first">first fact</li>
+            <li class="first">second fact</li>
+            <li class="first">third fact</li>
+            <li class="first">fourth fact</li>
+        </ul>
+    </div>
+    <div>
+        <h3>Everglades National Park</h3>
+        <ul>
+            <li class="second">first fact</li>
+            <li class="second">second fact</li>
+            <li class="second">third fact</li>
+            <li class="second">fourth fact</li>
+        </ul>
+    </div>
+    <div>
+        <h3>Everglades National Park</h3>
+        <ul>
+            <li class="third">first fact</li>
+            <li class="third">second fact</li>
+            <li class="third">third fact</li>
+            <li class="third">fourth fact</li>
+        </ul>
+    </div>
+
+    <button id="last-li-yellow">Click me!</button>
+
 
 <script src="js/jquery-2.2.4.js"></script>
 <script>
@@ -73,6 +104,15 @@
 
         $('dt').click(function () {
             $(this).toggleClass('highlight');
+        });
+
+
+        $('#last-li-yellow').click(function () {
+            $('li').each(function (index) {
+                if(index %4 === 3) {
+                    $(this).css('background-color', 'yellow');
+                }
+            });
         });
 
     });
