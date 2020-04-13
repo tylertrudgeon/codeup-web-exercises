@@ -13,6 +13,10 @@
         background-color: yellow;
     }
 
+    .list-item {
+        font-weight: bold;
+    }
+
     dt {
         cursor: default;
     }
@@ -63,30 +67,30 @@
     </dl>
 
     <div>
-        <h3>Everglades National Park</h3>
-        <ul>
-            <li class="first">first fact</li>
-            <li class="first">second fact</li>
-            <li class="first">third fact</li>
-            <li class="first">fourth fact</li>
+        <h3 id="header-1">Everglades National Park</h3>
+        <ul id="first-ul">
+            <li>first fact</li>
+            <li>second fact</li>
+            <li>third fact</li>
+            <li>fourth fact</li>
         </ul>
     </div>
     <div>
-        <h3>Everglades National Park</h3>
-        <ul>
-            <li class="second">first fact</li>
-            <li class="second">second fact</li>
-            <li class="second">third fact</li>
-            <li class="second">fourth fact</li>
+        <h3 id="header-2">Everglades National Park</h3>
+        <ul id="second-ul">
+            <li>first fact</li>
+            <li>second fact</li>
+            <li>third fact</li>
+            <li>fourth fact</li>
         </ul>
     </div>
     <div>
-        <h3>Everglades National Park</h3>
-        <ul>
-            <li class="third">first fact</li>
-            <li class="third">second fact</li>
-            <li class="third">third fact</li>
-            <li class="third">fourth fact</li>
+        <h3 id="header-3">Everglades National Park</h3>
+        <ul id="third-ul">
+            <li>first fact</li>
+            <li>second fact</li>
+            <li>third fact</li>
+            <li>fourth fact</li>
         </ul>
     </div>
 
@@ -113,6 +117,22 @@
                     $(this).css('background-color', 'yellow');
                 }
             });
+        });
+
+        // $('h3').click(function () {
+        //     $('ul').children(this).css('font-weight', 'bold');
+        // });
+
+        $('#header-1').click(function () {
+            $('#first-ul').children().toggleClass('list-item');
+        });
+
+        $('#header-2').click(function () {
+            $('#second-ul').children().toggleClass('list-item');
+        });
+
+        $('#header-3').click(function () {
+            $('#third-ul').children().toggleClass('list-item');
         });
 
     });
