@@ -33,6 +33,13 @@
 
 </style>
 <body>
+    <h2 id="register">Please register for our website!!</h2>
+
+    <div id="top-div">
+        <h1>Would you like to sign up for our newsletter?</h1>
+        <span id="hide-div">x</span>
+    </div>
+
 
     <a href="#" id="toggle-link">Toggle Visibility</a>
 
@@ -128,6 +135,23 @@
         $('li').click(function () {
                 $(this).parent().children().first().toggleClass('blue-color')
         });
+
+        $('#hide-div').click(function () {
+            $('#top-div').hide();
+        });
+
+        $('ul').hide();
+
+        $('h3').click(function () {
+            $(this).next().slideToggle(3000);
+        });
+
+        var registrationHeader = $('#register');
+
+        registrationHeader.hide();
+
+        registrationHeader.delay(8000).fadeIn(4000);
+
 
     });
 
