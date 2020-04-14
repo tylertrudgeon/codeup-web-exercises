@@ -17,6 +17,10 @@
         font-weight: bold;
     }
 
+    .blue-color {
+        color: blue;
+    }
+
     dt {
         cursor: default;
     }
@@ -112,36 +116,19 @@
 
 
         $('#last-li-yellow').click(function () {
-            $('li').each(function (index) {
-                if(index %4 === 3) {
-                    $(this).css('background-color', 'yellow');
-                }
+            $('ul').each(function () {
+                $(this).children().last().toggleClass('highlight');
             });
         });
 
-        $('#header-1').click(function () {
-            $('#first-ul').children().toggleClass('list-item');
+        $('h3').click(function () {
+                $(this).next().children().toggleClass('list-item')
         });
 
-        $('#header-2').click(function () {
-            $('#second-ul').children().toggleClass('list-item');
+        $('li').click(function () {
+                $(this).parent().children().first().toggleClass('blue-color')
         });
 
-        $('#header-3').click(function () {
-            $('#third-ul').children().toggleClass('list-item');
-        });
-
-        $('#first-ul').click(function () {
-            $('#first-ul li').first().css('color', 'blue');
-        });
-
-        $('#second-ul').click(function () {
-            $('#second-ul li').first().css('color', 'blue');
-        });
-
-        $('#third-ul').click(function () {
-            $('#third-ul li').first().css('color', 'blue');
-        });
     });
 
 </script>
