@@ -28,22 +28,14 @@
 
     $.get("data/inventory.json").done(function(tools) {
 
-        var title = "";
-        var quantity = 0;
-        var price = 0;
-        var category = "";
         var generatedHTML = "";
 
         for (var x = 0; x < tools.length; x++) {
-            title = tools[x].title;
-            quantity = tools[x].quantity;
-            price = tools[x].price;
-            category = tools[x].categories;
 
-            generatedHTML =  "<tr><td>"+title+"</td>" +
-                            "<td>"+quantity+"</td>"+
-                            "<td>"+price+"</td>"+
-                            "<td>"+category+"</td></tr>";
+            generatedHTML =  "<tr><td>"+tools[x].title+"</td>" +
+                            "<td>"+tools[x].quantity+"</td>"+
+                            "<td>"+tools[x].price+"</td>"+
+                            "<td>"+tools[x].categories+"</td></tr>";
 
             $('#insertProducts').append(generatedHTML);
 
@@ -52,35 +44,30 @@
         console.error('failed to load')
     });
 
-    $('#refresh').click(function (tools) {
-        $.get("data/inventory.json");
+    $('#refresh').click(function () {
+        $.get("data/inventory.json").done(function(tools) {
 
-        var title = "";
-        var quantity = 0;
-        var price = 0;
-        var category = "";
-        var generatedHTML = "";
-        for (var x = 0; x < tools.length; x++) {
-            generatedHTML = "<tr><td>" + title + "</td>" +
-                "<td>" + quantity + "</td>" +
-                "<td>" + price + "</td>" +
-                "<td>" + category + "</td></tr>";
+            $('#insertProducts').empty();
 
-            $('#insertProducts').append(generatedHTML);
-        }
+            var generatedHTML = "";
+
+            for (var x = 0; x < tools.length; x++) {
+
+                generatedHTML =  "<tr><td>"+tools[x].title+"</td>" +
+                    "<td>"+tools[x].quantity+"</td>"+
+                    "<td>"+tools[x].price+"</td>"+
+                    "<td>"+tools[x].categories+"</td></tr>";
+
+                $('#insertProducts').append(generatedHTML);
+
+            }
+        }).fail(function(error) {
+            console.error('failed to load')
+        });
     });
 
-
-
-
-    // TODO: Take the data from inventory.json and append it to the products table
-    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
-    //             its contents and fields
-    //       HINT: You will want to target #insertProducts for your new HTML elements
 })();
 </script>
-
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
+

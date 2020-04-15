@@ -15,27 +15,17 @@
             $.get("data/blog.json").done(function (blog) {
                 console.log(blog);
 
-                var title = "";
-                var content = "";
-                var category = "";
-                var date = "";
                 var generatedHTML = "";
 
-                for (var x = 0; x < blog.length; x++) {
-                   title = blog[x].title;
-                   content = blog[x].content;
-                   date = blog[x].date;
-                    console.log(date);
-                    category = blog[x].categories;
+                blog.forEach(function (item) {
 
-                    generatedHTML = "<h2>"+title+"</h2>"+
-                        "<h4>"+date+"</h4>"+
-                        "<h5>"+category+"</h5>"+
-                        "<p>"+content+"</p>";
+                    generatedHTML = "<h2>"+item.title+"</h2>"+
+                        "<h4>"+item.date+"</h4>"+
+                        "<h5>"+item.categories+"</h5>"+
+                        "<p>"+item.content+"</p>";
 
                     $('#posts').append(generatedHTML);
-
-               };
+                });
 
             }).fail(function (error) {
                 console.error('failed to load');
