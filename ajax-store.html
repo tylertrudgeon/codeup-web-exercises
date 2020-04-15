@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+</head>
+<body>
+
+<h1 class="d-flex justify-content-center">My Tool Store</h1>
+
+<table id="products">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+<button id = "refresh"> Refresh Inventory </button>
+<script src="js/jquery-2.2.4.js"></script>
+
+<script>
+(function() {
+    "use strict";
+    // TODO: Create an ajax GET request for /data/inventory.json
+
+    $.get("data/inventory.json").done(function(tools) {
+
+        var generatedHTML = "";
+
+        for (var x = 0; x < tools.length; x++) {
+
+            generatedHTML =  "<tr><td>"+tools[x].title+"</td>" +
+                            "<td>"+tools[x].quantity+"</td>"+
+                            "<td>"+tools[x].price+"</td>"+
+                            "<td>"+tools[x].categories+"</td></tr>";
+
+            $('#insertProducts').append(generatedHTML);
+
+        }
+    }).fail(function(error) {
+        console.error('failed to load')
+    });
+
+    $('#refresh').click(function () {
+        $.get("data/inventory.json").done(function(tools) {
+
+            $('#insertProducts').empty();
+
+            var generatedHTML = "";
+
+            for (var x = 0; x < tools.length; x++) {
+
+                generatedHTML =  "<tr><td>"+tools[x].title+"</td>" +
+                    "<td>"+tools[x].quantity+"</td>"+
+                    "<td>"+tools[x].price+"</td>"+
+                    "<td>"+tools[x].categories+"</td></tr>";
+
+                $('#insertProducts').append(generatedHTML);
+
+            }
+        }).fail(function(error) {
+            console.error('failed to load')
+        });
+    });
+
+})();
+</script>
+</body>
+</html>
+

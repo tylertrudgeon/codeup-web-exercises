@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+    <div id="posts"></div>
+
+    <script src="js/jquery-2.2.4.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            $.get("data/blog.json").done(function (blog) {
+                console.log(blog);
+
+                var generatedHTML = "";
+
+                blog.forEach(function (item) {
+
+                    generatedHTML = "<h2>"+item.title+"</h2>"+
+                        "<h4>"+item.date+"</h4>"+
+                        "<h5>"+item.categories+"</h5>"+
+                        "<p>"+item.content+"</p>";
+
+                    $('#posts').append(generatedHTML);
+                });
+
+            }).fail(function (error) {
+                console.error('failed to load');
+            });
+
+        });
+
+    </script>
+</body>
+</html>
