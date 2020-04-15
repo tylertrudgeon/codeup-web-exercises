@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<h1>My Tool Store</h1>
+<h1 class="d-flex justify-content-center">My Tool Store</h1>
 
 <table id="products">
     <thead>
@@ -18,7 +18,7 @@
     </thead>
     <tbody id="insertProducts"></tbody>
 </table>
-
+<button id = "refresh"> Refresh Inventory </button>
 <script src="js/jquery-2.2.4.js"></script>
 
 <script>
@@ -27,7 +27,6 @@
     // TODO: Create an ajax GET request for /data/inventory.json
 
     $.get("data/inventory.json").done(function(tools) {
-        console.log(tools);
 
         var title = "";
         var quantity = 0;
@@ -40,7 +39,6 @@
             quantity = tools[x].quantity;
             price = tools[x].price;
             category = tools[x].categories;
-            console.log(category);
 
             generatedHTML =  "<tr><td>"+title+"</td>" +
                             "<td>"+quantity+"</td>"+
@@ -49,12 +47,27 @@
 
             $('#insertProducts').append(generatedHTML);
 
-        };
-
-
-
+        }
     }).fail(function(error) {
         console.error('failed to load')
+    });
+
+    $('#refresh').click(function (tools) {
+        $.get("data/inventory.json");
+
+        var title = "";
+        var quantity = 0;
+        var price = 0;
+        var category = "";
+        var generatedHTML = "";
+        for (var x = 0; x < tools.length; x++) {
+            generatedHTML = "<tr><td>" + title + "</td>" +
+                "<td>" + quantity + "</td>" +
+                "<td>" + price + "</td>" +
+                "<td>" + category + "</td></tr>";
+
+            $('#insertProducts').append(generatedHTML);
+        }
     });
 
 
@@ -67,5 +80,7 @@
 })();
 </script>
 
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>

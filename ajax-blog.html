@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+    <div id="posts"></div>
+
+    <script src="js/jquery-2.2.4.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            $.get("data/blog.json").done(function (blog) {
+                console.log(blog);
+
+                var title = "";
+                var content = "";
+                var category = "";
+                var date = "";
+                var generatedHTML = "";
+
+                for (var x = 0; x < blog.length; x++) {
+                   title = blog[x].title;
+                   content = blog[x].content;
+                   date = blog[x].date;
+                    console.log(date);
+                    category = blog[x].categories;
+
+                    generatedHTML = "<h2>"+title+"</h2>"+
+                        "<h4>"+date+"</h4>"+
+                        "<h5>"+category+"</h5>"+
+                        "<p>"+content+"</p>";
+
+                    $('#posts').append(generatedHTML);
+
+               };
+
+            }).fail(function (error) {
+                console.error('failed to load');
+            });
+
+        });
+
+    </script>
+</body>
+</html>
