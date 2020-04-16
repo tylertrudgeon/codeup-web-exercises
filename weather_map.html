@@ -88,39 +88,25 @@
 
             }).done(function(data){
                 $('#location').append("Current City: ", data.city.name);
-                console.log(data);
-                var weather = [];
-                var minTemp = 0;
-                var maxTemp = 0;
-                var humidity = 0;
-                var wind = 0;
-                var date = "";
                 var weatherArray = data.list;
                 var generatedHTML = "";
                 var weatherImg = "";
 
                 for(var x = 0; x < weatherArray.length; x++){
                     if(x % 8 === 0){
-                        minTemp = weatherArray[x].main.temp_min;
-                        maxTemp = weatherArray[x].main.temp_max;
-                        date = weatherArray[x].dt_txt;
-                        weather = weatherArray[x].weather[0].description;
-                        wind = weatherArray[x].wind.speed;
-                        humidity = weatherArray[x].main.humidity;
                         weatherImg = "http://openweathermap.org/img/w/"+weatherArray[x].weather[0].icon+".png";
-
 
                         generatedHTML = "<div class=\"card\">"+
                             "<div class=\"card-body\">"+
-                            "<p id =\"title\" class=\"card-title\">"+date+"</p>"+
+                            "<p id =\"title\" class=\"card-title\">"+weatherArray[x].dt_txt+"</p>"+
                             "<hr>"+
                             "</div>"+
                             "<ul class=\"list-group list-group-flush\">"+
                             "<li id=\"weather-icons\" class=\"list-group-item\"><img id=\"img\" img src="+weatherImg+"></li>"+
-                            "<li id=\"temperature\" class=\"list-group-item\">Min: "+minTemp+"°F / Max: "+maxTemp+"°F</li>"+
-                            "<li class=\"list-group-item\">Description: "+weather+"</li>"+
-                            "<li class=\"list-group-item\">Humidity: "+humidity+"%</li>"+
-                            "<li class=\"list-group-item\">Wind: "+wind+" MPH</li>"+
+                            "<li id=\"temperature\" class=\"list-group-item\">Min: "+weatherArray[x].main.temp_min+"°F / Max:                                             "+weatherArray[x].main.temp_max+"°F</li>"+
+                            "<li class=\"list-group-item\">Description: "+weatherArray[x].weather[0].description+"</li>"+
+                            "<li class=\"list-group-item\">Humidity: "+weatherArray[x].main.humidity+"%</li>"+
+                            "<li class=\"list-group-item\">Wind: "+weatherArray[x].wind.speed+" MPH</li>"+
                             "</ul>"+
                             "</div>"+
                             "</div>";
@@ -130,6 +116,7 @@
 
                     }
                 };
+
 
             }).fail(function (errors) {
                 console.error(errors);
@@ -146,39 +133,25 @@
 
         }).done(function(data){
             $('#location').append("Current City: ", data.city.name);
-            console.log(data);
-            var weather = [];
-            var minTemp = 0;
-            var maxTemp = 0;
-            var humidity = 0;
-            var wind = 0;
-            var date = "";
             var weatherArray = data.list;
             var generatedHTML = "";
             var weatherImg = "";
 
             for(var x = 0; x < weatherArray.length; x++){
                 if(x % 8 === 0){
-                    minTemp = weatherArray[x].main.temp_min;
-                    maxTemp = weatherArray[x].main.temp_max;
-                    date = weatherArray[x].dt_txt;
-                    weather = weatherArray[x].weather[0].description;
-                    wind = weatherArray[x].wind.speed;
-                    humidity = weatherArray[x].main.humidity;
                     weatherImg = "http://openweathermap.org/img/w/"+weatherArray[x].weather[0].icon+".png";
-
 
                     generatedHTML = "<div class=\"card\">"+
                                     "<div class=\"card-body\">"+
-                                    "<p id =\"title\" class=\"card-title\">"+date+"</p>"+
+                                    "<p id =\"title\" class=\"card-title\">"+weatherArray[x].dt_txt+"</p>"+
                                     "<hr>"+
                                     "</div>"+
                                     "<ul class=\"list-group list-group-flush\">"+
                                     "<li id=\"weather-icons\" class=\"list-group-item\"><img id=\"img\" img src="+weatherImg+"></li>"+
-                                    "<li id=\"temperature\" class=\"list-group-item\">Min: "+minTemp+"°F / Max: "+maxTemp+"°F</li>"+
-                                    "<li class=\"list-group-item\">Description: "+weather+"</li>"+
-                                    "<li class=\"list-group-item\">Humidity: "+humidity+"%</li>"+
-                                    "<li class=\"list-group-item\">Wind: "+wind+" MPH</li>"+
+                                    "<li id=\"temperature\" class=\"list-group-item\">Min: "+weatherArray[x].main.temp_min+"°F / Max:                                              "+weatherArray[x].main.temp_max+"°F</li>"+
+                                    "<li class=\"list-group-item\">Description: "+weatherArray[x].weather[0].description+"</li>"+
+                                    "<li class=\"list-group-item\">Humidity: "+weatherArray[x].main.humidity+"%</li>"+
+                                    "<li class=\"list-group-item\">Wind: "+weatherArray[x].wind.speed+" MPH</li>"+
                                     "</ul>"+
                                     "</div>"+
                                     "</div>";
