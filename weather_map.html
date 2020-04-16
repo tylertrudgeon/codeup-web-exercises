@@ -73,10 +73,69 @@
 
 <script>
     "use strict";
-    var searchText = $('#search-bar').textContent;
+    var searchText;
+
     $('#search-btn').click(function (e) {
         e.preventDefault();
-        console.log(searchText);
+        searchText = $('#search-bar').val();
+        (function() {
+            $('#container').empty();
+            $('#location').empty();
+            $.get("http://api.openweathermap.org/data/2.5/forecast", {
+                "APPID": OWM_KEY,
+                "q":     searchText,
+                "units": "imperial"
+
+            }).done(function(data){
+                $('#location').append("Current City: ", data.city.name);
+                console.log(data);
+                var weather = [];
+                var minTemp = 0;
+                var maxTemp = 0;
+                var humidity = 0;
+                var wind = 0;
+                var date = "";
+                var weatherArray = data.list;
+                var generatedHTML = "";
+                var weatherImg = "";
+
+                for(var x = 0; x < weatherArray.length; x++){
+                    if(x % 8 === 0){
+                        minTemp = weatherArray[x].main.temp_min;
+                        maxTemp = weatherArray[x].main.temp_max;
+                        date = weatherArray[x].dt_txt;
+                        weather = weatherArray[x].weather[0].description;
+                        wind = weatherArray[x].wind.speed;
+                        humidity = weatherArray[x].main.humidity;
+                        weatherImg = "http://openweathermap.org/img/w/"+weatherArray[x].weather[0].icon+".png";
+
+
+                        generatedHTML = "<div class=\"card\">"+
+                            "<div class=\"card-body\">"+
+                            "<p id =\"title\" class=\"card-title\">"+date+"</p>"+
+                            "<hr>"+
+                            "</div>"+
+                            "<ul class=\"list-group list-group-flush\">"+
+                            "<li id=\"weather-icons\" class=\"list-group-item\"><img id=\"img\" img src="+weatherImg+"></li>"+
+                            "<li id=\"temperature\" class=\"list-group-item\">Min: "+minTemp+"°F / Max: "+maxTemp+"°F</li>"+
+                            "<li class=\"list-group-item\">Description: "+weather+"</li>"+
+                            "<li class=\"list-group-item\">Humidity: "+humidity+"%</li>"+
+                            "<li class=\"list-group-item\">Wind: "+wind+" MPH</li>"+
+                            "</ul>"+
+                            "</div>"+
+                            "</div>";
+
+                        $('#container').append(generatedHTML);
+                        $('#img').attr('src', weatherImg);
+
+                    }
+                };
+
+            }).fail(function (errors) {
+                console.error(errors);
+            });
+
+        })();
     });
 
     (function() {
@@ -87,7 +146,7 @@
 
         }).done(function(data){
             $('#location').append("Current City: ", data.city.name);
-
+            console.log(data);
             var weather = [];
             var minTemp = 0;
             var maxTemp = 0;
@@ -126,6 +185,7 @@
 
                     $('#container').append(generatedHTML);
                     $('#img').attr('src', weatherImg);
+
                 }
             };
 
