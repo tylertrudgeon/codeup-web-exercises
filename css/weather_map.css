@@ -16,3 +16,12 @@
     text-align: center;
     font-size: 14px;
 }
+
+#img {
+    margin-left: 70px;
+    width: 80px
+}
+
+.card-body {
+    padding-bottom: 0;
+}
