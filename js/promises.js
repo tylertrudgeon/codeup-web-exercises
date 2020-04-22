@@ -21,16 +21,13 @@ function latestCommit (userName) {
 latestCommit('tylertrudgeon');
 
 function wait (num) {
-    return new Promise((resolve) => {
-        let newNum = num * 1000;
+    return new Promise((resolved, reject) => {
         setTimeout(() => {
-            resolve('You\'ll see this after '+num+' seconds.')
-        }, newNum);
+            resolved(num)
+        }, num);
     })
 
 }
 
-const chooseHowLongToWait = wait(5);
-console.log(chooseHowLongToWait);
-
-chooseHowLongToWait.then(() => console.log('You\'ll see this after seconds'));
+wait(1000).then((waitedTime) => console.log(`You\'ll see this after ${waitedTime/1000} seconds`));
+wait(5000).then((waitedTime) => console.log(`You\'ll see this after ${waitedTime/1000} seconds`));
